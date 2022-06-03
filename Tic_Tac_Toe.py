@@ -1,7 +1,3 @@
-
-from re import X
-
-
 def main():
     board=make_board()
     print("-----------------------------------------------------\nWelcome to TicTacToe! This game is for 2 but we're devs so lets pretend to have friends!\nFollow the prompts to play, type q at any time to quit")
@@ -19,7 +15,6 @@ def main():
             p1.set_turn(True)
 
 
-
 def start_game(p1,p2):
     print("\nPlayer 1, choose your symbol (X or O)\n")
     p1.set_mark(choose_symbol())
@@ -35,6 +30,11 @@ def start_game(p1,p2):
     #print(f"player 1's inner{vars(p1)}")
 
 def make_board():
+    '''
+    the board is a dictionnary so that player can enter a coordinate intuitively and
+    place their marks, I got the idea from battleship which could be a project in 
+    the future, maybe in C
+    '''
     board = {}
     for char in 'abc':
         for x in range(1,4):
@@ -71,7 +71,6 @@ def display(board):
     print('\n')
 
 #good old OOP
-
 class Player:
     def __init__(self,mark='',turn=False):
         self._mark=mark
@@ -125,6 +124,7 @@ def play_again():
     else:
         print("\nthanks for playing!")
         quit()
+
 main()
 
 
